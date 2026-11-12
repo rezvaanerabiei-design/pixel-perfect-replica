@@ -6,7 +6,7 @@ import { Reveal } from "@/components/site/Reveal";
 import { BOOKS, CATEGORIES, filterBooks, toFa } from "@/lib/books";
 import { cn } from "@/lib/utils";
 
-type BooksSearch = { q?: string; cat?: string };
+type BooksSearch = { q?: string | undefined; cat?: string | undefined };
 
 export const Route = createFileRoute("/books/")({
   validateSearch: (search: Record<string, unknown>): BooksSearch => ({
