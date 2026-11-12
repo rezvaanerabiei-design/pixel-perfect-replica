@@ -9,10 +9,12 @@
  * terracotta used sparingly, a whisper of sky blue for the flight/cloud motif.
  */
 
-@theme inline {
+@theme {
   --font-sans: "Vazirmatn", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Noto Naskh Arabic", "Vazirmatn", serif;
+}
 
+@theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
