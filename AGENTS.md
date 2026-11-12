@@ -28,3 +28,8 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Project rules
+- Catalog and cart are client-side: books live in `src/lib/books.ts`, cart state in `src/lib/cart.tsx` (localStorage). Why: no backend yet; move to Lovable Cloud when real orders/inventory are needed.
+- Layout is RTL (`<html dir="rtl">`): use logical utilities (`ms-/me-/ps-/pe-/start-/end-`) instead of left/right. Why: keeps spacing correct for Persian.
+- Book covers are rendered in code (`BookCover` tone/motif variants), not images. Why: crisp Persian titles and no per-book image assets.
