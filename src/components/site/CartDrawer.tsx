@@ -35,7 +35,7 @@ export function CartDrawer() {
               {lines.map((l) => (
                 <li key={l.slug} className="flex gap-4 py-5">
                   <div className="w-16 shrink-0">
-                    <BookCover book={l.book} />
+                    <BookCover book={l.book} size="sm" />
                   </div>
                   <div className="flex min-w-0 flex-1 flex-col">
                     <div className="flex items-start justify-between gap-2">
