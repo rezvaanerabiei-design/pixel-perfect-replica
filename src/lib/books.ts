@@ -235,7 +235,7 @@ export function discountPercent(book: Book) {
   return Math.round(((book.oldPrice - book.price) / book.oldPrice) * 100);
 }
 
-export function filterBooks(books: Book[], opts: { q?: string; cat?: string }) {
+export function filterBooks(books: Book[], opts: { q?: string | undefined; cat?: string | undefined }) {
   const q = opts.q?.trim();
   return books.filter((b) => {
     if (opts.cat && b.category !== opts.cat) return false;
