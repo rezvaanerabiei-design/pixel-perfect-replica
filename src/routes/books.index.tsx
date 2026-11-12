@@ -1,6 +1,6 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { Search, X } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import { BookCard } from "@/components/site/BookCard";
 import { Reveal } from "@/components/site/Reveal";
 import { BOOKS, CATEGORIES, filterBooks, toFa } from "@/lib/books";
@@ -106,7 +106,7 @@ function BooksPage() {
   );
 }
 
-function FilterChip({ active, to, q, children }: { active: boolean; to: string | undefined; q?: string; children: React.ReactNode }) {
+function FilterChip({ active, to, q, children }: { active: boolean; to: string | undefined; q?: string; children: ReactNode }) {
   return (
     <Link
       to="/books"
