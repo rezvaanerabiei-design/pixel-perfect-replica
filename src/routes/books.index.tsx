@@ -9,10 +9,14 @@ import { cn } from "@/lib/utils";
 type BooksSearch = { q?: string | undefined; cat?: string | undefined };
 
 export const Route = createFileRoute("/books/")({
-  validateSearch: (search: Record<string, unknown>): BooksSearch => ({
-    q: typeof search.q === "string" && search.q ? search.q : undefined,
-    cat: typeof search.cat === "string" && search.cat ? search.cat : undefined,
-  }),
+  validateSearch: (search: Record<string, unknown>): BooksSearch => {
+    const q = search["q"];
+    const cat = search["cat"];
+    return {
+      q: typeof q === "string" && q ? q : undefined,
+      cat: typeof cat === "string" && cat ? cat : undefined,
+    };
+  },
   head: () => ({
     meta: [
       { title: "کتاب‌ها — آسمان کتاب" },
@@ -106,7 +110,7 @@ function BooksPage() {
   );
 }
 
-function FilterChip({ active, to, q, children }: { active: boolean; to: string | undefined; q?: string; children: ReactNode }) {
+function FilterChip({ active, to, q, children }: { active: boolean; to: string | undefined; q: string | undefined; children: ReactNode }) {
   return (
     <Link
       to="/books"
